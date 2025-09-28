@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="container mx-auto py-4">
-      <nav className="w-1/2 mx-auto flex justify-between items-center p-2 rounded-lg border">
-        <div className="">
+    <header className="py-4 fixed top-0 w-full z-50">
+      <nav className="container mx-auto flex justify-between items-center p-2 rounded-lg border-2">
+        <div>
           <h2>Faraz Khan</h2>
         </div>
         <div>
@@ -14,14 +14,14 @@ const Navbar = () => {
               <NavLink to="/">About</NavLink>
             </li>
             <li>
-              <NavLink to="/">Projects</NavLink>
+              <NavLink to="/">Work</NavLink>
             </li>
             <li>
               <NavLink to="/">Contact</NavLink>
             </li>
           </ul>
         </div>
-        <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-900">
+        <button className="bg-black text-white px-4 py-2 rounded-md font-semibold text-sm hover:bg-gray-900">
           Download CV
         </button>
       </nav>
