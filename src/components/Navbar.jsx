@@ -4,20 +4,26 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="py-4 fixed top-0 w-full z-50">
-      <nav className="container mx-auto flex justify-between items-center p-2 rounded-lg border-2">
+      <nav className="container mx-auto flex justify-between items-center p-2 rounded-lg border border-gray-300">
         <div>
-          <h2>Faraz Khan</h2>
+          <h2 className="font-bold">Faraz Khan</h2>
         </div>
         <div>
           <ul className="flex items-center gap-4">
             <li>
-              <NavLink to="/">About</NavLink>
+              <NavLink to="/" className="font-medium">
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/">Work</NavLink>
+              <NavLink to="/" className="font-medium">
+                Work
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/">Contact</NavLink>
+              <NavLink to="/" className="font-medium">
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
