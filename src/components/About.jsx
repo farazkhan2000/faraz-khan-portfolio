@@ -1,104 +1,156 @@
 import React from "react";
+import ProfileImage from "../assets/images/profile.jpg";
+import {
+  ArrowUpRight,
+  Code,
+  BookOpen,
+  GraduationCap,
+  Layers,
+} from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              About Me
+    <section
+      id="about"
+      className="container mx-auto px-4 lg:px-0 min-h-screen flex items-center py-32"
+    >
+      <div className="w-full space-y-12">
+        {/* Header */}
+        <div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="h-px bg-gray-400 flex-1"></div>
+          </div>
+          <h2 className="text-xl font-medium tracking-tight mb-6">About</h2>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <h2 className="text-3xl lg:text-4xl font-semibold leading-snug">
+              More than just a developer — <br />I build digital solutions with
+              purpose, precision, and impact.
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+            <div>
+              <p className="text-gray-600 text-base leading-relaxed mb-3">
+                I help brands and businesses turn bold ideas into meaningful
+                digital products. My approach combines clean code, creative
+                design, and strategic thinking to deliver work that stands out.
+              </p>
+              <p className="text-gray-500 text-sm">
+                Every project is an opportunity to bridge the gap between
+                technology and people — ensuring long-term growth and memorable
+                user experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          {/* Left - Image */}
+          <div className="lg:col-span-1">
+            <div className="relative group">
+              <img
+                src={ProfileImage}
+                alt="Faraz Khan"
+                className="w-full h-[320px] object-cover rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-black/5 group-hover:bg-transparent transition-all duration-300" />
+            </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Left Column - Image */}
-            <div className="lg:w-2/5 flex justify-center">
-              <div className="relative">
-                <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl transform rotate-3"></div>
-                <div className="absolute top-6 left-6 w-64 h-64 md:w-80 md:h-80 bg-gray-800 rounded-2xl transform -rotate-3 overflow-hidden">
-                  {/* Placeholder for your image */}
-                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                    <span className="text-white text-lg">Your Photo</span>
+          {/* Right - Content */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Stats (inline, compact) */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { value: "3+", label: "Years Experience" },
+                { value: "50+", label: "Projects Delivered" },
+                { value: "9", label: "Fiverr Projects" },
+                { value: "4", label: "Upwork Projects" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="p-4 border rounded-lg text-center hover:shadow transition-all"
+                >
+                  <div className="text-2xl font-bold text-gray-900">
+                    {stat.value}
                   </div>
+                  <p className="text-xs text-gray-500">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Education & Skills side by side */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Education */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <GraduationCap size={20} /> Education
+                </h3>
+                <div className="p-3 rounded-lg border hover:bg-gray-50 transition">
+                  <h4 className="font-medium text-gray-800">
+                    Masters in Information Systems (Ongoing)
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    University of Jyväskylä • 2024 - Present
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Focused on systems design, data-driven decision-making, and
+                    global IT applications.
+                  </p>
+                </div>
+                <div className="p-3 rounded-lg border hover:bg-gray-50 transition">
+                  <h4 className="font-medium text-gray-800">
+                    Bachelor in Computer Science
+                  </h4>
+                  <p className="text-sm text-gray-600">
+                    XYZ University • 2018 - 2022
+                  </p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Learned fundamentals of software engineering, algorithms,
+                    databases, and full-stack web development.
+                  </p>
+                </div>
+              </div>
+
+              {/* Skills */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <Layers size={20} /> Skills & Expertise
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    "React.js",
+                    "Next.js",
+                    "Vue.js",
+                    "Node.js",
+                    "Laravel",
+                    "MongoDB",
+                    "MySQL",
+                    "Firebase",
+                    "AWS",
+                    "TailwindCSS",
+                    "Figma",
+                    "UI/UX Design",
+                  ].map((skill) => (
+                    <div
+                      key={skill}
+                      className="px-3 py-2 rounded-md border text-xs text-gray-700 text-center hover:bg-gray-50 transition"
+                    >
+                      {skill}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Content */}
-            <div className="lg:w-3/5">
-              <div className="space-y-6">
-                {/* Introduction */}
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    Full Stack Developer & Master's Student
-                  </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    I'm Faraz Khan, a passionate full stack web developer
-                    currently pursuing my Master's in Information Systems at the
-                    University of Jyvaskyla. I specialize in creating digital
-                    experiences that are both visually appealing and highly
-                    functional.
-                  </p>
-                </div>
-
-                {/* Education & Current Focus */}
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-3">
-                    Current Focus
-                  </h4>
-                  <p className="text-gray-600 mb-4">
-                    Combining academic knowledge with practical experience to
-                    build innovative web solutions. My studies in Information
-                    Systems provide me with a strong foundation in both
-                    technical and business aspects of software development.
-                  </p>
-                  <div className="flex items-center text-gray-700">
-                    <span className="font-medium">University of Jyvaskyla</span>
-                    <span className="mx-2">•</span>
-                    <span>Masters in Information Systems</span>
-                  </div>
-                </div>
-
-                {/* Skills & Technologies */}
-                <div>
-                  <h4 className="text-xl font-semibold text-gray-800 mb-4">
-                    Technical Skills
-                  </h4>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      "React",
-                      "JavaScript",
-                      "TypeScript",
-                      "Node.js",
-                      "Express",
-                      "MongoDB",
-                      "PostgreSQL",
-                      "Tailwind CSS",
-                      "Git",
-                      "REST APIs",
-                      "Python",
-                      "Java",
-                    ].map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-gray-700 font-medium hover:border-blue-500 transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Call to Action */}
-                <div className="pt-4">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                    View My Work
-                  </button>
-                </div>
-              </div>
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                View My Work
+                <ArrowUpRight size={16} />
+              </button>
+              <button className="flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:border-gray-400 transition-colors">
+                Download CV
+              </button>
             </div>
           </div>
         </div>
